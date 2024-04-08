@@ -79,18 +79,24 @@
                     </div>
 
                     <div class="sm:text-end space-y-2">
-                        <input type="file" placeholder="Add Business Logo" name="business_logo" id="business_logo">
+                            <label class="w-64 flex items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-white">
+                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                                </svg>
+                                <span class="mt-2 text-base leading-normal"> Add a Business Logo</span>
+                                <input type='file' class="hidden" placeholder="Add Business Logo" name="business_logo" id="business_logo"/>
+                            </label>
                     </div>
                     <!-- Col -->
                 </div>
                 <!-- End Grid -->
 
                 <!-- Table -->
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-5xl mx-auto">
                     <h2 class="text-2xl font-semibold mb-4">Invoice Form</h2>
-                    <div class="bg-white shadow-md rounded-md p-4">
+                    <div class="shadow-md rounded-md p-4">
                         <!-- Heading row -->
-                        <div class="grid grid-cols-8 gap-4 mb-4">
+                        <div class="grid grid-cols-10 gap-4 mb-4 bg-black p-1 text-white rounded">
                             <div class="col-span-1 font-semibold">Item</div>
                             <div class="col-span-1 font-semibold">GST Rate</div>
                             <div class="col-span-1 font-semibold">Quantity</div>
@@ -98,11 +104,12 @@
                             <div class="col-span-1 font-semibold">Amount</div>
                             <div class="col-span-1 font-semibold">IGST</div>
                             <div class="col-span-1 font-semibold">Total</div>
-                            <div class="col-span-2"></div>
+                            <div class="col-span-1 font-semibold">Description</div>
+                            <div class="col-span-1 font-semibold">Thumbnail</div>
                         </div>
                         <!-- Input fields for the first line item -->
                         <div class="line-item-container">
-                            <div class="grid grid-cols-8 gap-4 line-item">
+                            <div class="grid grid-cols-10 gap-4 line-item">
                                 <input name="item[]" type="text" placeholder="Item" class="col-span-1 p-2 border rounded-md">
                                 <input name="gst_rate[]" type="number" placeholder="GST Rate" class="col-span-1 p-2 border rounded-md gst-rate" onchange="calculateAmount(this)">
                                 <input name="quantity[]" type="number" placeholder="Quantity" class="col-span-1 p-2 border rounded-md quantity" onchange="calculateAmount(this)">
@@ -110,8 +117,8 @@
                                 <input name="amount[]" type="number" placeholder="Amount" class="col-span-1 p-2 border rounded-md amount" readonly>
                                 <input name="igst[]" type="number" placeholder="IGST" class="col-span-1 p-2 border rounded-md igst" readonly>
                                 <input name="total[]" type="number" placeholder="Total" class="col-span-1 p-2 border rounded-md total" readonly>
-                                <input name="description[]" type="text" placeholder="Description" class="col-span-1 p-2 border rounded-md total">
-                                <input name="thumbnail[]" type="file" placeholder="Thumbnail" class="col-span-1 p-2 border rounded-md total">
+                                <input name="description[]" type="text" placeholder="Description" class="col-span-1 p-2 border rounded-md">
+                                <input name="thumbnail[]" type="file" placeholder="Thumbnail" class="col-span-1 p-2 border rounded-md">
                                 <div class="col-span-8 flex justify-between items-center">
                                     <button type="button" class="addLineItemBtn bg-green-500 text-white px-4 py-2 rounded-md">Add New Line Item</button>
                                 </div>
